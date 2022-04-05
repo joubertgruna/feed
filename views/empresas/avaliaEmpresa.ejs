@@ -1,0 +1,137 @@
+<!doctype html>
+<%- include('../partials/head.ejs') %>
+
+	<body class="">
+		<div id="global-loader"></div>
+		<div class="page">
+			<div class="page-main">
+				<div class="header py-5 d-flex">
+					<div class="container-fluid">
+						<div class="">
+                            <div class="col-12 text-center">
+							    <a href="index-1.html">
+								    <h5 class="page-title pt-4">FEED</h5>
+							    </a>
+                                <hr>
+                                <h4 class="page-title">Bem vindo ao FEED <%=id.nome%>"! </h4>
+                            </div>
+						</div>
+					</div>
+				</div>
+                
+				<div class="wrapper">
+					<!-- Sidebar Holder -->        
+					<div class="content-area">
+                        <div class="row">
+                            <!-- <div class="col-lg-12"> -->
+                                <form method="POST" action="/cliente/cadCliente" class="card">
+                                    <input type="hidden" name="<%=id.url%>">
+                                    <div class="card-body">
+                                        <h5 class="pb-4 pt-1 text-center"
+                                            style="color:rgb(58, 58, 58); border-bottom: solid thin silver; font-weight: 300;">
+                                            Gostariamos de saber seu feedback sobre o estabelecimento <span style="color: blueviolet;"><%= id.url %></span> em que você se encontra agora, vamos lá?!
+                                        </h5>
+                                        
+                                        <div class="row">
+                                            
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="form-group"
+                                                    style="color: rgb(58, 58, 58);">
+                                                    
+                                                        <div class="rating-stars block" id="another-rating">
+                                                            <label class="form-label pb-2"><%=id.avaliacao1%></label>
+                                                            <input type="number" readonly="readonly" class="rating-value" name="avaliacao1" id="another-rating-stars-value" value="0">
+                                                            <div  class="rating-stars-container">
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-12">
+                                                <div class="form-group"
+                                                    style="color: rgb(58, 58, 58);">
+                                                    
+                                                        <div class="rating-stars block" id="another-rating">
+                                                            <label class="form-label pb-2"><%=id.avaliacao2%></label>
+                                                            <input type="number" readonly="readonly" class="rating-value" name="avaliacao2" id="another-rating-stars-value" value="0">
+                                                            <div class="rating-stars-container">
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-md-12">
+                                                <div class="form-group"
+                                                    style="color: rgb(58, 58, 58);">
+                                                    
+                                                        <div class="rating-stars block" id="another-rating">
+                                                            <label class="form-label pb-2"><%=id.avaliacao3%></label>
+                                                            <input type="number" readonly="readonly" class="rating-value" name="avaliacao3" id="another-rating-stars-value" value="0">
+                                                            <div class="rating-stars-container">
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                                <div class="rating-star">
+                                                                    <i class="fa fa-heart"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+ 
+                                    </div>
+                                    <div class="card-footer text-left">
+                                        <button type="submit" class="btn btn-block btn-primary">
+                                            <span style="font-weight: 700;">ENVIAR AVALIAÇÃO</span>
+                                        </button>
+                                        
+                                    </div>
+                                </form>
+                            <!-- </div> -->
+                        </div>
+
+					</div>
+				</div>        
+
+<%- include('../partials/footer.ejs') %>

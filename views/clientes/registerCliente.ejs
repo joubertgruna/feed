@@ -1,0 +1,196 @@
+﻿<%- include('../partials/head.ejs') %>
+
+	<body>
+		<div class="login-img">
+			<div id="global-loader"></div>
+			<div class="page">
+				<div class="page-single">
+					<!-- <div class="container"> -->
+						<div class="row">
+							
+						<div class="content-area">
+						<div class="row">
+							<div class="col-md-12 text-center p-0 m-0">
+								<!-- <h1 class="page-title pt-6 pb-4">FEED</h1> -->
+								<img style="width: 100px; max-height: fit-content;" src="/assets/images/feed.svg" class="sgv" alt="logo" >
+							</div>
+							
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body p-6">
+										<div class="card-title text-center">
+											<span style="color: rgb(173, 132, 190); font-weight: 700;">FEED</span><span style="font-weight: 600;"> - Sistema de Avaliação e Analise.</span>
+										</div>
+										<hr>
+										<div class="wizard-container">
+											<div class="wizard-card m-0" data-color="red" id="wizardProfile">
+												<form class="form-wizard" method="post" action="/cliente/regCliente">
+													<input type="hidden" name="empresaURL" value="<%=empresaURL.url%>">
+													<div class="wizard-navigation">
+														<ul>
+															<li><a style="font-size: 16px;" href="#about" data-toggle="tab">Registro</a></li>
+															<li><a style="font-size: 16px;" href="#account" data-toggle="tab">Avaliação</a></li>
+															<!-- <li><a style="font-size: 12px;" href="#address" data-toggle="tab">Sucesso</a></li> -->
+														</ul>
+													</div>
+
+													<div class="tab-content">
+																												
+														<div class="tab-pane" id="about">
+															<div class="card-header p-0">
+																<h5 style="font-weight: 500;" class="info-text text-dark pt-4">Seja bem vindo ao FEED! Nós gostariamos de saber quem é você, para isso é só preencher o formulário abaixo.</h5>
+															</div>
+														  <div>
+																<div>
+																	<div class="input-group">
+																		<div class="form-group label-floating">
+																			<label class="form-label">Nome <small>(requerido)</small></label>
+																			<input name="nome" type="text" class="form-control">
+																		</div>
+																	</div>
+
+																	<div class="input-group">
+																		<div class="form-group label-floating">
+																			<label class="form-label">E-mail <small>(requerido)</small></label>
+																			<input name="email" type="email" class="form-control">
+																		</div>
+																	</div>
+																	<div class="input-group">
+																		<div class="form-group label-floating">
+																			<label class="form-label">Celular <small>(requerido)</small></label>
+																			<input name="celular" type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="input-group">
+																		<div class="form-group label-floating">
+																			<label class="form-label">Data de Nascimento <small>(requerido)</small></label>
+																			<input name="dataNascimento" type="datetime" class="form-control">
+																		</div>
+																	</div>
+																	<hr>
+																</div>
+
+															</div>
+														</div>
+														<div class="tab-pane" id="account">
+															<div class="card-header p-0 text-center">
+																<h5 style="font-weight: 400;" class="info-text text-dark pt-2 ">Agora queremos o seu feedback sobre o estabelecimento que você se encontra nesse momento - <span  style="color: darkslateblue; font-weight: 700;">Empresa: <%=empresaURL.url%></span>.</h5>
+															</div>
+															<!-- <h4 class="info-text">Avalie agora o estabelecimento <span class="page-title pt-4"></span></h4> -->
+															<div class="row">
+																<div class="col-sm-12 col-md-12">
+																	<div class="form-group"
+																		style="color: rgb(58, 58, 58);">
+																		
+																			<div class="rating-stars block" id="another-rating">
+																				<label class="form-label pb-2"><%=empresaURL.avaliacao1%></label>
+																				<input type="number" readonly="readonly" class="rating-value" name="resposta1" id="" value="0">
+																				<div  class="rating-stars-container">
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																				</div>
+																			</div>
+																			<hr>
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-12">
+																	<div class="form-group"
+																		style="color: rgb(58, 58, 58);">
+																		
+																			<div class="rating-stars block" id="another-rating">
+																				<label style="color: black;" class="form-label pb-2"><%=empresaURL.avaliacao2%></label>
+																				<input type="number" readonly="readonly" class="rating-value" name="resposta2" id="another-rating-stars-value" value="0">
+																				<div class="rating-stars-container">
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																				</div>
+																			</div>
+																			<hr>
+																	</div>
+																</div>
+																<div class="col-sm-6 col-md-12">
+																	<div class="form-group"
+																		style="color: rgb(58, 58, 58);">
+																		
+																			<div class="rating-stars block" id="another-rating">
+																				<label class="form-label pb-2"><%=empresaURL.avaliacao3%></label>
+																				<input type="number" readonly="readonly" class="rating-value" name="resposta3" id="another-rating-stars-value" value="0">
+																				<div class="rating-stars-container">
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																					<div class="rating-star">
+																						<i class="fa fa-heart"></i>
+																					</div>
+																				</div>
+																			</div>
+																			<hr>
+																	</div>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+													<div class="wizard-footer">
+														<div class="pull-right">
+															<input type='button' class='btn btn-next btn-fill btn-primary btn-wd m-0' name='next' value='Continuar'>
+															<input type='submit' class='btn btn-finish btn-fill btn-success btn-wd m-0' name='finish' value='Finalizar'>
+														</div>
+
+														<div class="pull-left">
+															<input type='button' class='btn btn-previous btn-fill btn-default btn-wd m-0' name='previous' value='Anterior'>
+														</div>
+														<div class="clearfix"></div>
+													</div>
+												</form>
+											</div>
+										</div> <!-- wizard container -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%- include('../partials/footer.ejs') %>
+		

@@ -1,0 +1,103 @@
+<%- include('../partials/head.ejs') %>
+
+    <body class="">
+        <div id="global-loader"></div>
+        <div class="page">
+            <div class="page-main">
+                <div class="app-header1 header py-1 d-flex">
+                    <div class="container-fluid">
+                        <div class="d-flex">
+                            <a class="header-brand" href="index-1.html">
+                                <img style="width: 80px; max-height: fit-content;" src="/assets/images/feed.svg"
+                                    class="sgv" alt="logo">
+                            </a>
+                            <div class="menu-toggle-button">
+                                <a class="nav-link wave-effect" href="#" id="sidebarCollapse">
+                                    <span class="fa fa-bars"></span>
+                                </a>
+                            </div>
+                            <div class="d-flex order-lg-2 ml-auto header-right-icons header-search-icon">
+                                <div class="p-2">
+                                    <form class="input-icon ">
+                                        <div class="input-icon-addon">
+                                            <i class="fe fe-search"></i>
+                                        </div>
+                                        <input type="search" class="form-control header-search"
+                                            placeholder="Search&hellip;" tabindex="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--cut -->
+                <div class="wrapper">
+                    <%- include('../partials/sideBarMenu.ejs')%>
+                        <div class="content-area">
+                            <div class="page-header">
+                                <h4 class="page-title">Adicionar Usuario</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Adicionar Usuario
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="POST" action="/admin/addUser" class="card">
+                                        <div class="card-body">
+                                            <h4 class="page-title pb-2 pt-3"
+                                                style="color:rgb(58, 58, 58); border-bottom: solid thin silver; font-size: 20px">
+                                                Informações
+                                                Gerais
+                                            </h4>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Nome</label>
+                                                        <input name="userName" type="text" class="form-control"
+                                                            placeholder="Nome">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Email
+                                                        </label>
+                                                        <input name="email" type="email" class="form-control"
+                                                            placeholder="Email">
+                                                        <span style="font-size: 12px; color: crimson;">
+                                                            <%=msgErr%>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Senha</label>
+                                                        <input name="password" type="text" class="form-control"
+                                                            placeholder="Senha">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="card-footer text-left">
+                                            <button type="submit" class="btn btn-success">
+                                                <span style="font-weight: 700;">Adicionar</span>
+                                            </button>
+                                            <a class="btn btn-primary" style="color: white" href="/admin/users">
+                                                <span style="font-weight: 700;">Voltar</span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+            <%- include('../partials/footer.ejs') %>

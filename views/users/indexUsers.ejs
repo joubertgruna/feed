@@ -1,0 +1,160 @@
+<%- include('../partials/head.ejs') %>
+
+    <body class="">
+        <div id="global-loader"></div>
+        <div class="page">
+            <div class="page-main">
+                <div class="app-header1 header py-1 d-flex">
+                    <div class="container-fluid">
+                        <div class="d-flex">
+                            <a class="header-brand" href="/Usuario/Usuarios">
+                                <img style="width: 80px; max-height: fit-content;" src="../assets/images/feed.svg"
+                                    class="sgv" alt="logo">
+                            </a>
+                            <div class="menu-toggle-button">
+                                <a class="nav-link wave-effect" href="#" id="sidebarCollapse">
+                                    <span class="fa fa-bars"></span>
+                                </a>
+                            </div>
+                            <div class="d-flex order-lg-2 ml-auto header-right-icons header-search-icon">
+                                <div class="p-2">
+                                    <form class="input-icon ">
+                                        <div class="input-icon-addon">
+                                            <i class="fe fe-search"></i>
+                                        </div>
+                                        <input type="search" class="form-control header-search"
+                                            placeholder="Pesquisar&hellip;" tabindex="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--cut -->
+                <div class="wrapper">
+                    <%- include('../partials/sideBarMenu.ejs')%>
+                        <div class="content-area">
+                            <div class="page-header">
+                                <h4 class="page-title">Usuarios - Visão Geral</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Lista
+                                        Usuarios
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="row row-cards">
+                                <div class="col-12 text-left">
+                                    <a style="float: right;" href="/admin/addUser"><button
+                                            class="btn btn-success btn-icon font-weight-bold" data-toggle="tooltip"
+                                            data-placement="top" style="border-radius: 12px;">Adicionar Usuario
+                                            <i class="fa fa-plus"></i>
+                                        </button></a>
+
+                                </div>
+                            </div>
+
+                            <div class="row row-cards">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h2 class="card-title">Lista Usuarios</h2>
+                                        </div>
+                                        <div>
+                                            <div class="table-responsive ">
+                                                <table class="table card-table  table-hover table-vcenter text-nowrap">
+                                                    <thead>
+                                                        <tr class="text-left">
+                                                            <th>ID</th>
+                                                            <th>Usuario</th>
+                                                            <th>E-mail</th>
+                                                            <th>Senha</th>
+                                                            <th class="text-center">Editar</th>
+                                                            <th class="text-center">Deletar</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <% cli.forEach(cli=>{ %>
+
+                                                        <tbody>
+                                                            <tr class="text-left">
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="mr-3 text-primary p-0">
+                                                                            <%= cli.id %>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="mr-3 text-primary p-0">
+                                                                            <%= cli.userName %>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="mb-0 mt-2 font-weight-semibold p-0">
+                                                                        <%= cli.email %>
+                                                                    </h5>
+                                                                </td>
+
+                                                                <td>
+                                                                    <a href="#" class="text-primary p-0">
+                                                                        <%= cli.password %>
+                                                                    </a>
+                                                                </td>
+
+
+                                                                <td class="text-center p-0">
+                                                                    <a href="/admin/editar/id/<%= cli.id %>" class=""><i
+                                                                            style="font-size: 18px"
+                                                                            class="fa fa-pencil"></i>
+                                                                    </a>
+                                                                </td>
+                                                                <td class="text-center p-0">
+                                                                    <a class="text-center">
+                                                                        <form action="/admin/delete" method="POST"
+                                                                            onsubmit="verifica(event, this)">
+                                                                            <input type="hidden" name="id"
+                                                                                value="<%= cli.id %>">
+                                                                            <button class="btn btn-sm btn-primary "
+                                                                                type="submit">
+                                                                                <i style="font-size: 18px"
+                                                                                    class="fa fa-trash"></i>
+                                                                            </button>
+                                                                        </form>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <% }) %>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+            <%- include('../partials/footer.ejs') %>
+                <script>
+                    function verifica(event, form) {
+                        event.preventDefault()
+                        if (event != null) {
+                            if (isNaN(event)) {
+                                var desicao = confirm("Deseja Deletar o Usuario?")
+                                if (desicao) {
+                                    form.submit()
+                                }
+                            }
+                        } else {
+                            alert('Não deletar Usuario')
+                        }
+                    }
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip('Adicionar Usuario')
+                    })
+                </script>

@@ -1,0 +1,160 @@
+<%- include('../partials/head.ejs') %>
+
+    <body class="">
+        <div id="global-loader"></div>
+        <div class="page">
+            <div class="page-main">
+                <div class="app-header1 header py-1 d-flex">
+                    <div class="container-fluid">
+                        <div class="d-flex">
+                            <a class="header-brand" href="/cliente/clientes">
+                                <img style="width: 80px; max-height: fit-content;" src="/assets/images/feed.svg"
+                                    class="sgv" alt="logo">
+                            </a>
+                            <div class="menu-toggle-button">
+                                <a class="nav-link wave-effect" href="#" id="sidebarCollapse">
+                                    <span class="fa fa-bars"></span>
+                                </a>
+                            </div>
+                            <div class="d-flex order-lg-2 ml-auto header-right-icons header-search-icon">
+                                <div class="p-2">
+                                    <form class="input-icon ">
+                                        <div class="input-icon-addon">
+                                            <i class="fe fe-search"></i>
+                                        </div>
+                                        <input type="search" class="form-control header-search"
+                                            placeholder="Pesquisar&hellip;" tabindex="1">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--cut -->
+                <div class="wrapper">
+                    <%- include('../partials/sideBarMenu.ejs')%>
+                        <div class="content-area">
+                            <div class="page-header">
+                                <h4 class="page-title">
+
+                                    <span class="badge text-nowrap" style="font-weight: 700;">
+                                        Cliente: <%= id.nome %>
+                                    </span>
+
+                                </h4>
+
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Editar
+                                        empresa
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="POST" action="/cliente/edit/<%= id.id %>" class="card">
+                                        <div class="card-body">
+                                            <h4 class="page-title pb-2 pt-3"
+                                                style="color:rgb(58, 58, 58); border-bottom: solid thin silver; font-size: 20px">
+                                                Informações
+                                                Gerais
+                                            </h4>
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">
+                                                            Nome</label>
+                                                        <input name="nome" type="text" class="form-control"
+                                                            value="<%= id.nome %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">E-mail
+                                                        </label>
+                                                        <input name="email" type="email" class="form-control"
+                                                            placeholder="Email" value="<%= id.email %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">
+                                                            Celular
+                                                        </label>
+                                                        <input name="celular" type="text" class="form-control"
+                                                            placeholder="URL que será gerada" value="<%= id.celular %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Data de
+                                                            nascimento</label>
+                                                        <input name="dataNascimento" type="text" class="form-control"
+                                                            placeholder="<%= id.dataNascimento %>"
+                                                            value="<%= id.dataNascimento %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Avaliou a Empresa</label>
+                                                        <input disabled name="dataNascimento" type="text"
+                                                            class="form-control" placeholder="<%= id.empresaURL %>"
+                                                            value="<%= id.empresaURL %>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <h4 class="page-title pb-2 pt-3"
+                                                style="color:rgb(58, 58, 58); border-bottom: solid thin silver; font-size: 20px">
+                                                Notas
+                                            </h4>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Nota do cliente a
+                                                            1º
+                                                            pergunta.</label>
+                                                        <input style="color: black" type="number" name="resposta1"
+                                                            rows="3" class="form-control" value="<%= id.resposta1 %>">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Nota do cliente a
+                                                            2º
+                                                            pergunta.</label>
+                                                        <input style="color: black" type="number" name="resposta2"
+                                                            rows="3" class="form-control" value="<%= id.resposta2 %>">
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="form-label">Nota do cliente a
+                                                            3º
+                                                            pergunta.
+                                                            <input style="color: black" type="number" name="resposta3"
+                                                                rows="3" class="form-control text-black"
+                                                                value="<%= id.resposta3 %>">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-left">
+                                            <button type="submit" class="btn btn-success">
+                                                <span style="font-weight: 700;">Editar</span>
+                                            </button>
+                                            <a href="/cliente/clientes" class="btn btn-primary">
+                                                <span style="font-weight: 700;">Voltar</span>
+                                            </a>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+
+                </div>
+                <%- include('../partials/footer.ejs') %>

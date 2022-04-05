@@ -1,0 +1,64 @@
+﻿<%- include('../partials/head.ejs') %>
+
+	<body>
+		<div class="login-img">
+			<div id="global-loader"></div>
+			<div class="page">
+				<div class="page-single">
+					<div class="container">
+						<div class="row authentication">
+							<div class="col col-login mx-auto">
+								<div class="text-center mb-6">
+									<img style="width: 130px; max-height: fit-content;" src="/assets/images/feed.svg"
+										class="sgv" alt="logo">
+								</div>
+								<form class="card" method="POST" action="/admin/authenticate">
+									<h5>
+										<%=msg%>
+									</h5>
+									<div class="card-body p-6 ">
+										<div class="card-title text-center">Login Administrador</div>
+										<!-- <div class="input-icon form-group wrap-input">
+											<span class="input-icon-addon search-icon">
+												<i class="mdi mdi-account"></i>
+											</span>
+											<input type="text" name="userName" class="form-control"
+												placeholder="Nome de Usuario">
+
+										</div> -->
+										<div class="input-icon form-group wrap-input">
+											<span class="input-icon-addon search-icon">
+												<i class="mdi mdi-account"></i>
+											</span>
+											<span style="font-size: x-small; color: crimson;">
+												<%=msgErr%>
+											</span>
+											<input type="email" name="email" class="form-control" placeholder="E-mail">
+
+										</div>
+										<div class="input-icon form-group wrap-input">
+											<span class="input-icon-addon search-icon">
+												<i class="zmdi zmdi-lock"></i>
+											</span>
+											<span style="font-size: x-small; color: crimson;">
+												<%=msgErr%>
+											</span>
+											<input type="password" name="password" class="form-control mb-0"
+												id="exampleInputPassword1" placeholder="Senha">
+
+
+										</div>
+
+										<div class="form-footer">
+											<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+										</div>
+
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%- include('../partials/footer.ejs') %>
