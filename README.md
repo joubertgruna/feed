@@ -1,2 +1,2 @@
 # feed
-Web API - Data Structure and Statistical Analysis
+Web API - Data analysis and statistical analysis
